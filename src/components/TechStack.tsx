@@ -10,19 +10,49 @@ import {
   CylinderCollider,
   RapierRigidBody,
 } from "@react-three/rapier";
+import "./styles/TechStack.css";
 
-const textureLoader = new THREE.TextureLoader();
-const imageUrls = [
-  "/images/react2.webp",
-  "/images/next2.webp",
-  "/images/node2.webp",
-  "/images/express.webp",
-  "/images/mongo.webp",
-  "/images/mysql.webp",
-  "/images/typescript.webp",
-  "/images/javascript.webp",
+const skillsList = [
+  "React.js", "Next.js", "Node.js", "NestJS", 
+  "TypeScript", "JavaScript", "HTML/CSS", "Tailwind", 
+  "MongoDB", "PostgreSQL", "MySQL", "Docker", 
+  "REST API", "WebSocket", "TypeORM", "Prisma", 
+  "Git/GitHub", "CI/CD", "Redux"
 ];
-const textures = imageUrls.map((url) => textureLoader.load(url));
+
+const createSkillTexture = (skill: string) => {
+  const canvas = document.createElement("canvas");
+  canvas.width = 1024;
+  canvas.height = 1024;
+  const ctx = canvas.getContext("2d")!;
+  
+  // Dark slate background
+  ctx.fillStyle = "#0f172a";
+  ctx.fillRect(0, 0, 1024, 1024);
+
+  // Pure white text
+  ctx.fillStyle = "#ffffff";
+  ctx.textAlign = "center";
+  ctx.textBaseline = "middle";
+  
+  const fontSize = skill.length > 8 ? 160 : 200;
+  ctx.font = `bold ${fontSize}px sans-serif`;
+  ctx.fillText(skill, 512, 512);
+
+  // Optional: add a border around the canvas so spheres have distinct lines
+  ctx.strokeStyle = "#14b8a6";
+  ctx.lineWidth = 15;
+  ctx.strokeRect(0, 0, 1024, 1024);
+
+  const texture = new THREE.CanvasTexture(canvas);
+  texture.colorSpace = THREE.SRGBColorSpace;
+  // Repeat the texture so it's always visible from any angle!
+  texture.wrapS = THREE.RepeatWrapping;
+  texture.wrapT = THREE.RepeatWrapping;
+  texture.repeat.set(3, 2);
+  
+  return texture;
+};
 
 const sphereGeometry = new THREE.SphereGeometry(1, 28, 28);
 
@@ -34,7 +64,7 @@ type SphereProps = {
   vec?: THREE.Vector3;
   scale: number;
   r?: typeof THREE.MathUtils.randFloatSpread;
-  material: THREE.MeshPhysicalMaterial;
+  material: THREE.MeshPhysicalMaterial | THREE.MeshStandardMaterial;
   isActive: boolean;
 };
 
@@ -151,17 +181,20 @@ const TechStack = () => {
       window.removeEventListener("scroll", handleScroll);
     };
   }, []);
+  
   const materials = useMemo(() => {
-    return textures.map(
-      (texture) =>
-        new THREE.MeshStandardMaterial({
+    return skillsList.map(
+      (skill) => {
+        const texture = createSkillTexture(skill);
+        return new THREE.MeshStandardMaterial({
           map: texture,
           emissive: "#ffffff",
           emissiveMap: texture,
-          emissiveIntensity: 0.3,
+          emissiveIntensity: 0.1,
           metalness: 0.5,
           roughness: 1,
-        })
+        });
+      }
     );
   }, []);
 

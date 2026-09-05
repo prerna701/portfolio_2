@@ -116,3 +116,30 @@
     margin-top: 90px;
   }
 }
+
+.techstack-skills-overlay {
+  position: absolute;
+  top: 150px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 90%;
+  max-width: 800px;
+  z-index: 10;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 1s ease-in-out;
+  background: rgba(15, 23, 42, 0.4);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  padding: 20px;
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.techstack-skills-overlay.active {
+  opacity: 1;
+}
+
+.techstack-skills-overlay .skills-tags {
+  justify-content: center;
+}

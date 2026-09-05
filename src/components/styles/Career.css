@@ -242,3 +242,109 @@
     justify-content: left;
   }
 }
+
+.career-info-details {
+  display: flex;
+  flex-direction: column;
+  width: 40%;
+}
+
+.career-info-details p {
+  width: 100%;
+}
+
+.read-more-btn {
+  background: rgba(20, 184, 166, 0.1);
+  border: 1px solid #14b8a6;
+  border-radius: 8px;
+  color: #14b8a6;
+  font-family: inherit;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  padding: 8px 16px;
+  text-align: center;
+  text-decoration: none;
+  margin-top: 15px;
+  width: fit-content;
+  transition: all 0.2s ease-in-out;
+}
+
+.read-more-btn:hover {
+  background: #14b8a6;
+  color: #111;
+}
+
+.career-modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
+
+.career-modal-content {
+  position: relative;
+  background: #0f172a;
+  border: 1px solid #1e293b;
+  border-radius: 12px;
+  padding: 40px;
+  max-width: 700px;
+  width: 90%;
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+  color: #f8fafc;
+}
+
+.career-modal-close {
+  position: absolute;
+  top: 15px;
+  right: 20px;
+  background: none;
+  border: none;
+  color: #94a3b8;
+  font-size: 28px;
+  cursor: pointer;
+  line-height: 1;
+}
+
+.career-modal-close:hover {
+  color: #f1f5f9;
+}
+
+.career-modal-title {
+  font-size: 24px;
+  margin-bottom: 20px;
+  color: #5eead4;
+  margin-top: 0;
+}
+
+.career-modal-list {
+  padding-left: 20px;
+  margin: 0;
+  color: #cbd5e1;
+  font-size: 16px;
+  line-height: 1.7;
+}
+
+.career-modal-list li {
+  margin-bottom: 12px;
+}
+
+@media only screen and (max-width: 1400px) {
+  .career-info-details {
+    width: 45%;
+  }
+}
+
+@media only screen and (max-width: 900px) {
+  .career-info-details {
+    width: 100%;
+  }
+}
