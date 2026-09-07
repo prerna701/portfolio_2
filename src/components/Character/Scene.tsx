@@ -64,6 +64,11 @@ const Scene = () => {
           scene.add(character);
           headBone = character.getObjectByName("spine006") || null;
           screenLight = character.getObjectByName("screenlight") || null;
+          // Re-measure now that layout/fonts have settled — the mount-time
+          // measurement can be wrong (e.g. desktop media query not yet
+          // applied), and without this the camera framing stays off until
+          // the user happens to resize the window.
+          handleResize(renderer, camera, canvasDiv, character);
           progress.loaded().then(() => {
             setTimeout(() => {
               light.turnOnLights();
