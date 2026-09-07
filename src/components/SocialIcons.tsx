@@ -1,6 +1,5 @@
 import {
   FaGithub,
-  FaLinkedinIn,
 } from "react-icons/fa6";
 import "./styles/SocialIcons.css";
 import { TbNotes } from "react-icons/tb";
