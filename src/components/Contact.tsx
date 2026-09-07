@@ -24,7 +24,7 @@ const Contact = () => {
               MCA, Cloud Computing & DevOps — Chandigarh University, Mohali (2024–2026)
             </p>
             <p>
-              BCA, Cloud Computing — PIET, Panipat (2021–2024)
+              BCA, Cloud Computing and Network Security — PIET, Panipat (2021–2024)
             </p>
           </div>
           <div className="contact-box">
@@ -37,15 +37,6 @@ const Contact = () => {
               className="contact-social"
             >
               GitHub <MdArrowOutward />
-            </a>
-            <a
-              href="https://www.linkedin.com/"
-              target="_blank"
-              rel="noreferrer"
-              data-cursor="disable"
-              className="contact-social"
-            >
-              LinkedIn <MdArrowOutward />
             </a>
           </div>
           <div className="contact-box">

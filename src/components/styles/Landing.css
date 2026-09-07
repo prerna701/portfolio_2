@@ -111,7 +111,11 @@
   position: absolute;
   max-width: 1920px;
   max-height: 1080px;
-  transform: translateX(-50%);
+  /* Centering (-50%) is applied via GSAP's xPercent in GsapScroll.ts, not
+     here — GSAP imports a CSS translateX(%) into its own xPercent tracking
+     on first touch, and the scroll tweens below also animate "x", which is
+     a separate additive component. Setting -50% in both places stacks to
+     -100% the moment any tween runs. */
   width: 100%;
   left: 50%;
   z-index: 0;

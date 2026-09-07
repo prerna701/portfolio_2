@@ -3,7 +3,7 @@ import * as THREE from "three";
 import setCharacter from "./utils/character";
 import setLighting from "./utils/lighting";
 import { useLoading } from "../../context/LoadingProvider";
-import handleResize from "./utils/resizeUtils";
+import handleResize, { updateCameraAspect } from "./utils/resizeUtils";
 import {
   handleMouseMove,
   handleTouchEnd,
@@ -67,8 +67,10 @@ const Scene = () => {
           // Re-measure now that layout/fonts have settled — the mount-time
           // measurement can be wrong (e.g. desktop media query not yet
           // applied), and without this the camera framing stays off until
-          // the user happens to resize the window.
-          handleResize(renderer, camera, canvasDiv, character);
+          // the user happens to resize the window. (Aspect only — NOT the
+          // full handleResize, which would rebuild the scroll timelines a
+          // second time and double up their transform offsets.)
+          updateCameraAspect(renderer, camera, canvasDiv);
           progress.loaded().then(() => {
             setTimeout(() => {
               light.turnOnLights();

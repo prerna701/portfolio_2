@@ -9,6 +9,13 @@ export function setCharTimeline(
   setInterval(() => {
     intensity = Math.random();
   }, 200);
+
+  // .character-model is centered via left:50% in CSS; xPercent applies the
+  // -50% half-width offset as GSAP-tracked state so it composes correctly
+  // with the "x" tweens below (which represent only their own incremental
+  // scroll-driven offset, not the full centering amount).
+  gsap.set(".character-model", { xPercent: -50 });
+
   const tl1 = gsap.timeline({
     scrollTrigger: {
       trigger: ".landing-section",
