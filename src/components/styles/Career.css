@@ -281,9 +281,7 @@
   left: 0;
   width: 100vw;
   height: 100vh;
-  background: rgba(0, 0, 0, 0.6);
-  backdrop-filter: blur(8px);
-  -webkit-backdrop-filter: blur(8px);
+  background: rgba(0, 0, 0, 0.9); /* Darker solid background since blur is removed */
   display: flex;
   justify-content: center;
   align-items: center;

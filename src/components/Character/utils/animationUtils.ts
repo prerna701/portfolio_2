@@ -38,6 +38,7 @@ const setAnimations = (gltf: GLTF) => {
     );
     const introAction = mixer.clipAction(introClip!);
     introAction.clampWhenFinished = true;
+    introAction.setDuration(0.5);
     introAction.reset().play();
     setTimeout(() => {
       const blink = gltf.animations.find((clip) => clip.name === "Blink");

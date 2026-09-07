@@ -21,7 +21,13 @@ const Navbar = () => {
     });
 
     smoother.scrollTop(0);
-    smoother.paused(true);
+    
+    // Import and run initialFX immediately to unpause scroll and run intro animations
+    import("./utils/initialFX").then((module) => {
+      if (module.initialFX) {
+        module.initialFX();
+      }
+    });
 
     let links = document.querySelectorAll(".header ul a");
     links.forEach((elem) => {
@@ -58,6 +64,11 @@ const Navbar = () => {
           <li>
             <a data-href="#about" href="#about">
               <HoverLinks text="ABOUT" />
+            </a>
+          </li>
+          <li>
+            <a data-href="#career" href="#career">
+              <HoverLinks text="EXPERIENCE" />
             </a>
           </li>
           <li>

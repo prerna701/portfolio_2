@@ -90,20 +90,20 @@ const WhatIDo = () => {
               <h3>FRONTEND DEVELOPMENT</h3>
               <h4>Responsive & Reusable UIs</h4>
               <p>
-                Building dynamic and responsive user interfaces with modern web technologies, ensuring seamless integration with REST APIs and state management.
+                Use Tailwind CSS, Uiverse.io, and other AI tools to create beautiful, attractive, and responsive user interfaces.
               </p>
               <h5>Skillset & tools</h5>
               <div className="what-content-flex">
                 <div className="what-tags">React.js</div>
                 <div className="what-tags">Next.js</div>
-                <div className="what-tags">JavaScript (ES6+)</div>
+                <div className="what-tags">Tailwind CSS</div>
                 <div className="what-tags">TypeScript</div>
-                <div className="what-tags">Redux</div>
                 <div className="what-tags">Material UI</div>
               </div>
               <div className="what-arrow"></div>
             </div>
           </div>
+
           <div
             className="what-content what-noTouch"
             ref={(el) => setRef(el, 1)}
@@ -123,20 +123,53 @@ const WhatIDo = () => {
             </div>
             <div className="what-corner"></div>
             <div className="what-content-in">
-              <h3>BACKEND & DEVOPS</h3>
-              <h4>Scalable Architecture & CI/CD</h4>
+              <h3>BACKEND DEVELOPMENT</h3>
+              <h4>Scalable Architecture</h4>
               <p>
-                Developing robust backend services, managing relational and NoSQL databases, and automating deployment pipelines using Docker and cloud platforms.
+                Build scalable architectures, optimize backend code, and manage relational and NoSQL databases efficiently for high performance.
               </p>
               <h5>Skillset & tools</h5>
               <div className="what-content-flex">
                 <div className="what-tags">Node.js</div>
                 <div className="what-tags">NestJS</div>
-                <div className="what-tags">PostgreSQL & MongoDB</div>
+                <div className="what-tags">PostgreSQL</div>
+                <div className="what-tags">MongoDB</div>
+                <div className="what-tags">WebSockets</div>
+              </div>
+              <div className="what-arrow"></div>
+            </div>
+          </div>
+
+          <div
+            className="what-content what-noTouch"
+            ref={(el) => setRef(el, 2)}
+          >
+            <div className="what-border1">
+              <svg height="100%">
+                <line
+                  x1="0"
+                  y1="100%"
+                  x2="100%"
+                  y2="100%"
+                  stroke="white"
+                  strokeWidth="2"
+                  strokeDasharray="6,6"
+                />
+              </svg>
+            </div>
+            <div className="what-corner"></div>
+            <div className="what-content-in">
+              <h3>DEVOPS & DEPLOYMENT</h3>
+              <h4>CI/CD & Automation</h4>
+              <p>
+                Deploy applications seamlessly through CI/CD pipelines, containerize with Docker, and automate workflows using GitHub Actions and GitLab CI.
+              </p>
+              <h5>Skillset & tools</h5>
+              <div className="what-content-flex">
                 <div className="what-tags">Docker</div>
                 <div className="what-tags">GitLab CI/CD</div>
+                <div className="what-tags">GitHub Actions</div>
                 <div className="what-tags">AWS / Azure</div>
-                <div className="what-tags">WebSockets</div>
               </div>
               <div className="what-arrow"></div>
             </div>
